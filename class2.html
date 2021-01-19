@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <title>vue js</title>
+</head>
+<body>
+   <div id="app">
+    <!--   <h1>{{name}}</h1> display name (data)from data which are in app.js -->
+    <!--   <h1>{{message}}</h1> there we display data property, no matter it is name o message the main thing whey shoud match-->
+        <h1>{{ MyName() }}</h1>  <!--display method-->  
+        <h1>{{ MyAge() }}</h1>  <!--display method with message from data property-->    
+        <h1>{{ MyAge1(24) }}</h1>  <!--display method with message from data property with parameter> 
+   </div>
+
+<!-- <script src="app.js"></script>  // use app.js for data source-->
+
+<script>
+let app = new Vue({                    //define new object
+    el: '#app',                        //define element and define which element, #for access
+    data:{                            //define data property
+        message: 'Easy learning'          //define name
+    },
+    methods:{                       //creating methods
+        MyName(){
+            return 'easy learning method'       //define what we want to return
+        },
+        MyAge(){
+            return `${this.message}`    //retun massage from data property
+        },
+        MyAge1(age){
+            return `${this.message} my age is ${age}`    //retun massage from data property and pass parameter
+       },
+    }
+
+})</script> 
+
+
+</body>
+</html>
