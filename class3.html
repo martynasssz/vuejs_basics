@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <style>
+        .one {
+            color:orange;
+        }
+        .two {
+            text-decoration: line-through;
+        }
+    </style>
+
+    <title>vue js data binding</title>
+    <!-- to make thigs dinamic !!!!!!!!!!!!!!!!!!!!!! -->
+</head>
+<body>
+   <div id="app">
+    <!-- <a href={{ address }}>Vuejs</a> it don't work because is dinamic element--> 
+    <a v-bind:href="address">Vuejs</a> <!-- we use v-bind to enable dinamic elements to work such as links, class and ..--> 
+    <h1 :class="classes">Easy learning</h1> <!-- we use v-bind to show classes 'one', 'two'  : clone (shorcut) instead v-bind:-->
+    <input type="text" v-bind:value="name"> <!-- we use data property to pass name to value-->
+   </div>
+
+<!-- <script src="app.js"></script>  // use app.js for data source-->
+
+<script>
+let app = new Vue({                    //define new object
+    el: '#app',                        //define element and define which element, #for access
+    data:{                            //define data property
+        address: 'https://vuejs.org/',          //define link
+        classes: ['one','two'],
+        name: 'Martin K.'
+    },
+    
+    
+
+})
+</script> 
+
+
+</body>
+</html>
