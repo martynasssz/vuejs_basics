@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <title>Vue js event Object</title>
+    <style>
+        .canvas {
+            height: 240px;
+            width: 240px;
+            margin-top: 20px;
+            background-color:orange;            
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <button @click="Me"> Click Here</button> <!--define method Me which all event object-->
+   
+        <div class="canvas" @mousemove="over"> <!--object should be define and visible here ||| @mousemove it is an event and method over-->
+        {{ log.x }} , {{ log.y }}   <!--are object-->
+         </div>
+
+    </div>
+
+<!-- <script src="app.js"></script>  // use app.js for data source-->
+
+<script>
+let app = new Vue({                    //define new object
+    el: '#app',                        //define element and define which element, #for access
+    data:{                            //define data property
+        log:{               //define log property
+            x:0,            //define object and value for object it is 0
+            y:0              //define object and value for object it is 0
+        }
+    },
+    methods:{                       //creating methods
+        Me(event){      // event difined as argument
+           console.log(event)  //define all parameter
+        },  
+        over(e){     //define over method    // e argiment
+            //alert('done')           //when will be offset display such alert done (inside quadrum)
+            
+            //it shows mouse posittion in pixels in the quadrum
+            this.log.x = event.offsetX  // define this log property and object x = define event and object to event offsetX
+            this.log.y = event.offsetY
+       
+        }  
+
+    }
+
+})</script> 
+
+
+</body>
+</html>
