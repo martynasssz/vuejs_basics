@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <title>Vue js Modifiers </title>
+</head>
+<body>
+   <div id="app">
+        <h1>{{ name }}</h1> <!--display name property-->
+        <button @click.alt="Message">Click me </button>  <!--define click event and method Message -- .if we push keyboard button alt  then counting in console log will work-->
+        <button @click.shift="Message">Click me </button>
+        <a href="https://vuejs.org/v2/guide/" @click.prevent>VueJS</a> <!--prevent modifer prevents from linking to certain page, we can see link but it doesn't work-->
+   </div>
+
+<!-- <script src="app.js"></script>  // use app.js for data source-->
+
+<script>
+let app = new Vue({                    //define new object
+    el: '#app',                        //define element and define which element, #for access
+    data:{                            //define data property
+        name: 'udemy online'          //define name
+    },
+    methods:{                       //creating methods
+        Message(){
+            console.log('easy learning') //show in console log
+        }
+    }
+
+})</script> 
+
+
+</body>
+</html>
