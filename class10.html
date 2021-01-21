@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <title>Vue js Loop Condition</title>
+</head>
+<body>
+   <div id="app">
+       <!-- display array values -->
+       <ol>
+           <li v-for="name in names"> {{ name }} </li> <!-- name single names plural diffrent then in php foreach loop and define singular property name -->
+       </ol>
+
+       <ul>
+           <li v-for="fruit in fruits"> {{ fruit.name }} | {{ fruit.color }} | {{ fruit.weight }}</li> <!-- fruit after dot name object -->
+       </ul>
+   
+   </div>
+
+<!-- <script src="app.js"></script>  // use app.js for data source-->
+
+<script>
+let app = new Vue({                    //define new object
+    el: '#app',                        //define element and define which element, #for access
+    data:{                            //define data property
+        names: ['Martin', 'Peter', 'Bred', 'Larry', 'Sim', 'Andrius'],         //define array with values 
+        fruits: [
+            {name:'Mango', color:'Yellow', weight:200 },
+            {name:'Aple', color:'Red', weight:80 },
+            {name:'Orange', color:'Green', weight:150 }
+        ]
+    },
+    methods:{                       //creating methods
+        
+    }
+
+})</script> 
+
+
+</body>
+</html>
