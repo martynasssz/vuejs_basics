@@ -5,4 +5,4 @@ Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
-}).$mount('#app')
+}).$mount('#app') //the same thing as using el:#app loadimg id app from index.thml
