@@ -2,7 +2,7 @@
   <div id="app">
     <h2> {{title}} </h2>
     <Navbar></Navbar> <!-- to display navbar component-->
-    <AllFriends :friends="friends"></AllFriends> <!-- we pass all friends -->
+    <AllFriends :friends="friends" @delete="deleteFriends"></AllFriends> <!-- we pass all friends -->
     <OnlineFriends :friends="friends"></OnlineFriends>
   </div>
 </template>
@@ -33,6 +33,14 @@ export default {
       Navbar, //Sidebar   //defined two components Navbar and Sidebar
       AllFriends,
       OnlineFriends
+    },
+    methods:{
+      deleteFriends(payload){  
+        //console.log(payload)
+        this.friends = this.friends.filter(friend => {
+          return friend.name !== payload.name
+        })
+      }
     }
  
   

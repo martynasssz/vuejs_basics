@@ -2,7 +2,7 @@
     <div id="allfriends">
         <h2>All friend</h2>
         <div v-for="(friend,index) in friends" :key="index"> <!-- fast data witch we be visible ||| with key we definde index-->
-        <h6>{{ friend.name }}</h6>                
+        <h6 @click="unfriend(friend.name)">{{ friend.name }}</h6>  <!-- click event define method-->              
         </div>
     </div>
 </template>
@@ -14,6 +14,11 @@ export default {
    data(){
        return {
            
+       }
+   },
+   methods:{
+       unfriend(name) { //name parameter
+            this.$emit('delete',{name})        //if we want to send the request from child component to the mother component we have to use emit. emit have two parameters: one name and another will be as a value.
        }
    }
 }
