@@ -1,7 +1,9 @@
 <template>
     <div class="Hook">
         <h1> Posts </h1><hr> <!-- pass title to property-->
-        <div v-for="post in posts" :key="post.id"> <!-- :key we want to get id using :key-->
+        <input type="text" v-model="searchTrem" placeholder="Search">
+
+        <div v-for="post in filtersearch" :key="post.id"> <!-- :key we want to get id using :key  // filterseach is a place we want search-->
             <h2> {{post.title}}</h2> <!-- we display post title-->
             <p>{{post.body | snippet}}</p> <!-- we display body-->
            
@@ -17,8 +19,16 @@ export default {
    name: 'Hook',
    data(){
        return { 
-           posts:[] 
+           posts:[],
+           searchTrem: ''  //property where will be displa
        }
+   },
+   computed:{ //computed property //in computed arrea define
+       filtersearch(){   //define method
+            return this.posts.filter(post =>{//we want acsess property
+                return post.title.match(this.searchTrem)  // return all the data we will take with this post, it is title //return another function match, in mach areat define this property searchTrem
+            })     
+       }    
    },
    methods: {
      
