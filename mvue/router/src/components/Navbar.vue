@@ -14,6 +14,9 @@
                 </li> <!--define route index and key--> 
 
             </ul>
+
+            <button @click="Contact">Contact</button>
+            <button @click="About">About</button>
         </div>
     </div>
 </template>
@@ -25,7 +28,15 @@ export default {
        return {
     userIds:['1', '2', '3', '4', '5', '6', '7', '8']        
        }
-   }
+   },
+   methods:{
+        Contact(){ //push for redirect
+           this.$router.push({name: 'Contact'})
+        },
+        About(){ //push for redirect
+           this.$router.push({name: 'About'})
+        }          
+     }   
 }
 </script>
 
