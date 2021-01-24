@@ -12,6 +12,14 @@ export default {
     return {
         UserId: this.$route.params.user_id //reach this route user_id from parameter
     }
+  },
+  methods:{  //created to load parameter without refreshig page
+      updateId(){
+          this.UserId = this.$route.params.user_id
+      }
+  },
+  watch:{   //created to load parameter without refreshig page
+     $route:'updateId' 
   }
 }
 </script>
