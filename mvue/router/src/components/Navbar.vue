@@ -55,5 +55,8 @@ export default {
         margin: 0;
         padding: 8px;
     }
+    a.router-link-exact-active {
+       color: red;
+    }
 
 </style>
