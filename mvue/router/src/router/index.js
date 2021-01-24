@@ -8,6 +8,7 @@ import Profile from '@/components/Profile'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',   //to remove # in home page
   routes: [
     {
       path: '/',
