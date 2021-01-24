@@ -3,8 +3,8 @@
         <h1> Posts </h1><hr> <!-- pass title to property-->
         <div v-for="post in posts" :key="post.id"> <!-- :key we want to get id using :key-->
             <h2> {{post.title}}</h2> <!-- we display post title-->
-            <p>{{post.body}}</p> <!-- we display body-->
-            <p>{{post.body}}</p>
+            <p>{{post.body | snippet}}</p> <!-- we display body-->
+           
         </div>
 
        
